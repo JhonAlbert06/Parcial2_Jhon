@@ -22,16 +22,15 @@ object AppModule {
             .add(KotlinJsonAdapterFactory())
             .build()
     }
-
+/*
     @Singleton
     @Provides
-    fun providesApi(moshi: Moshi): /*:Entidad API*/ {
+    fun providesApi(moshi: Moshi): Entidad API {
         return Retrofit.Builder()
-            .baseUrl("/*URL API*/")
+            .baseUrl("URL API")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             //.create(Entidad API::class.java)
     }
-
-
+*/
 }
