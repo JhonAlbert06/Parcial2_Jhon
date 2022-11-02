@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import edu.ucne.parcial2_jhon.data.remote.VerboDto
+import edu.ucne.parcial2_jhon.data.remote.VerboInterfaceApi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -26,11 +27,11 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providesApi(moshi: Moshi): VerboDto {
+    fun providesApi(moshi: Moshi): VerboInterfaceApi {
         return Retrofit.Builder()
             .baseUrl("https://private-a127e-verbos.apiary-mock.com/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
-            .create(VerboDto::class.java)
+            .create(VerboInterfaceApi::class.java)
     }
 }
