@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import edu.ucne.parcial2_jhon.data.remote.VerboDto
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -22,15 +23,14 @@ object AppModule {
             .add(KotlinJsonAdapterFactory())
             .build()
     }
-/*
+
     @Singleton
     @Provides
-    fun providesApi(moshi: Moshi): Entidad API {
+    fun providesApi(moshi: Moshi): VerboDto {
         return Retrofit.Builder()
-            .baseUrl("URL API")
+            .baseUrl("https://private-a127e-verbos.apiary-mock.com/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
-            //.create(Entidad API::class.java)
+            .create(VerboDto::class.java)
     }
-*/
 }
