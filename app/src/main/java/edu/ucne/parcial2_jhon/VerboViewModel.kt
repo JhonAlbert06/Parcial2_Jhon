@@ -26,6 +26,7 @@ class VerboViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(VerbosListUiState())
     val uiState : StateFlow<VerbosListUiState> = _uiState.asStateFlow()
 
+
     init {
         viewModelScope.launch {
             _uiState.getAndUpdate {
